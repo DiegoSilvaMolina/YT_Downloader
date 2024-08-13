@@ -16,9 +16,11 @@ git clone https://github.com/DiegoSilvaMolina/YT_downloader.git
 cd YT_downloader
 ```
 
-## Uso
+## Ruta
+En la ruta dist/ se encuentra el archivo ".exe" donde podrá ejecutar el script
 
-Ingresa el URL de tu video de Youtube, luego selecciona el formato que deseas descargarlo (audio o video). Ingresa el índice del video en la playlist o mix (o presione Enter si no es una playlist o mix) Y descarga!
+## Uso
+al momento de ejecutarlo le pedirá ingresar un URL de un video de Youtube, luego debe seleccionar el formato que deseas descargarlo (audio o video), Ingresar el índice del video en la playlist o mix (o presione Enter si no es una playlist o mix) Y descarga!
 
 > [!NOTA]
 > Los videos y audios se descargaran en alta definición (HD)
