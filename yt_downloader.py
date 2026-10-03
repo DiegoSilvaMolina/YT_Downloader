@@ -1,12 +1,14 @@
-import yt_dlp as ytdlp
-from pathlib import Path
-import sys
+import ctypes
 import re
+import sys
 import tempfile
 import threading
 import tkinter as tk
+from pathlib import Path
 from tkinter import messagebox, simpledialog, ttk
 from urllib.parse import parse_qs, urlparse
+
+import yt_dlp as ytdlp
 
 
 def download_video(url, video_index=None, audio=False, resolution='720p',
@@ -227,7 +229,22 @@ def confirm_video(title, video_index, confirm_callback=None):
 
 
 def get_download_directory():
-    return Path(r'D:\Desktop\YT_Downloader')
+    if sys.platform == 'win32':
+        desktop_path = ctypes.create_unicode_buffer(260)
+        result = ctypes.windll.shell32.SHGetFolderPathW(
+            None,
+            0x10,
+            None,
+            0,
+            desktop_path,
+        )
+        if result != 0 or not desktop_path.value:
+            raise OSError(
+                f'Windows no pudo localizar la carpeta Escritorio (HRESULT {result}).'
+            )
+        return Path(desktop_path.value) / 'YT_Downloader'
+
+    return Path.home() / 'Desktop' / 'YT_Downloader'
 
 
 def download_to_desktop(

@@ -35,11 +35,13 @@ progreso y el estado sin pedir que presiones Enter.
 
 ## Carpeta de descargas
 
-Al comenzar la primera descarga, el programa crea `D:\Desktop\YT_Downloader` y
-guarda ahí los archivos finales. Los temporales y las conversiones intermedias
-se procesan en una carpeta temporal del sistema, que se limpia al terminar. Las
+Al comenzar la primera descarga, el programa detecta la ubicación Escritorio de
+Windows para el usuario actual y crea allí `YT_Downloader`. Esto respeta
+ubicaciones redirigidas, por ejemplo a otra unidad o OneDrive. Los archivos
+finales se guardan ahí; los temporales y las conversiones intermedias se
+procesan en una carpeta temporal del sistema, que se limpia al terminar. Las
 descargas que ya existían no se mueven. Al crear la carpeta por primera vez, el
-programa muestra la ruta y avisa que las descargas futuras se guardarán ahí.
+programa muestra su ruta y avisa que las descargas futuras se guardarán ahí.
 
 ## Detección de videos y mixes
 
