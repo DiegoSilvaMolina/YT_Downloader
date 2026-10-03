@@ -1,4 +1,4 @@
-# YT_Downloader V1.0
+# YT_Downloader V1.1
 Script para descargar videos/musica de youtube (playlist, mix y videos individuales) en formatos MP3 y MP4 asignando la resolución deseada 
 
 ## Características
